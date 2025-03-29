@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    android:padding="12dp">
+
+    <TextView
+        android:id="@+id/tvTitleExpectTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/expectTime"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvExpectTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HH:mm"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/tvTitleExpectTime"
+        app:layout_constraintStart_toStartOf="@+id/tvTitleExpectTime"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitleExpectTime" />
+
+    <TextView
+        android:id="@+id/tvTitleRealTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/realTime"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/tvTitleExpectTime"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvRealTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HH:mm"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/tvTitleRealTime"
+        app:layout_constraintStart_toStartOf="@+id/tvTitleRealTime"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitleRealTime" />
+
+    <TextView
+        android:id="@+id/tvTitleAirLineName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/airLineName"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvExpectTime" />
+
+    <TextView
+        android:id="@+id/tvAirLineName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text=""
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvTitleAirLineName"
+        app:layout_constraintStart_toEndOf="@+id/tvTitleAirLineName"
+        app:layout_constraintTop_toTopOf="@+id/tvTitleAirLineName" />
+
+    <TextView
+        android:id="@+id/tvTitleAirLineCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/airLineCode"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/tvTitleAirLineName"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitleAirLineName" />
+
+    <TextView
+        android:id="@+id/tvAirLineCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text=""
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvTitleAirLineCode"
+        app:layout_constraintStart_toEndOf="@+id/tvTitleAirLineCode"
+        app:layout_constraintTop_toTopOf="@+id/tvTitleAirLineCode" />
+
+    <TextView
+        android:id="@+id/tvTitleAirLineGate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/airLineGate"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/tvTitleAirLineCode"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitleAirLineCode" />
+
+    <TextView
+        android:id="@+id/tvAirLineGate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text=""
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvTitleAirLineGate"
+        app:layout_constraintStart_toEndOf="@+id/tvTitleAirLineGate"
+        app:layout_constraintTop_toTopOf="@+id/tvTitleAirLineGate" />
+
+    <TextView
+        android:id="@+id/tvAirFlyStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/airFlyStatus"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tvTitleAirLineGate"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitleAirLineGate" />
+
+    <TextView
+        android:id="@+id/card075"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="|"
+        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/tvAirportCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/airportCode"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/card075"
+        app:layout_constraintStart_toStartOf="@+id/card075"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvAirportName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/airportName"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/card075"
+        app:layout_constraintEnd_toEndOf="@+id/card075"
+        app:layout_constraintStart_toStartOf="@+id/card075"
+        app:layout_constraintTop_toBottomOf="@+id/tvAirportCode"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/tvUpAirportCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ABC"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvUpAirportName"
+        app:layout_constraintEnd_toEndOf="@+id/card075"
+        app:layout_constraintStart_toStartOf="@+id/card075"
+        app:layout_constraintTop_toBottomOf="@+id/card075"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/tvUpAirportName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="大邱機場"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/card075"
+        app:layout_constraintStart_toStartOf="@+id/card075" />
+</androidx.constraintlayout.widget.ConstraintLayout>

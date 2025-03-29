@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">My Flight</string>
+
+    <string name="expectTime">排定時間</string>
+    <string name="realTime">實際時間</string>
+    <string name="airLineCode">航班號碼:</string>
+    <string name="airLineName">航空公司:</string>
+    <string name="airLineGate">登機門:</string>
+    <string name="airFlyStatus">狀態</string>
+    <string name="airportName">臺北桃園國際機場</string>
+    <string name="airportCode">TPE</string>
+    <string name="flight">航班</string>
+    <string name="exchange">匯率</string>
 </resources>
