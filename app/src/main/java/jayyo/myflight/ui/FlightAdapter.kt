@@ -3,6 +3,8 @@ package jayyo.myflight.ui
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.squareup.picasso.Picasso
+import jayyo.myflight.R
 import jayyo.myflight.databinding.ItemFlightBinding
 import jayyo.myflight.model.Flight
 
@@ -21,6 +23,12 @@ class FlightAdapter(private val flights: List<Flight>) :
             binding.tvAirFlyStatus.text = flight.airFlyStatus
             binding.tvUpAirportCode.text = flight.upAirportCode
             binding.tvUpAirportName.text = flight.upAirportName
+
+            Picasso.get()
+                .load(flight.airLineLogo.ifEmpty { null })
+                .placeholder(R.drawable.loading)
+                .error(R.drawable.empty)
+                .into(binding.iconAirLineName)
         }
     }
 

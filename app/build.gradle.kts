@@ -39,6 +39,9 @@ android {
 }
 
 dependencies {
+    //Picasso
+    implementation("com.squareup.picasso:picasso:2.71828")
+
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.5")
     implementation("androidx.navigation:navigation-ui-ktx:2.7.5")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")

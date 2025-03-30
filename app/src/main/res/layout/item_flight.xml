@@ -48,14 +48,13 @@
         app:layout_constraintStart_toStartOf="@+id/tvTitleRealTime"
         app:layout_constraintTop_toBottomOf="@+id/tvTitleRealTime" />
 
-    <TextView
-        android:id="@+id/tvTitleAirLineName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ImageView
+        android:id="@+id/iconAirLineName"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:src="@drawable/empty"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="@string/airLineName"
-        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvExpectTime" />
 
@@ -66,9 +65,9 @@
         android:layout_marginStart="8dp"
         android:text=""
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="@+id/tvTitleAirLineName"
-        app:layout_constraintStart_toEndOf="@+id/tvTitleAirLineName"
-        app:layout_constraintTop_toTopOf="@+id/tvTitleAirLineName" />
+        app:layout_constraintBottom_toBottomOf="@+id/iconAirLineName"
+        app:layout_constraintStart_toEndOf="@+id/iconAirLineName"
+        app:layout_constraintTop_toTopOf="@+id/iconAirLineName" />
 
     <TextView
         android:id="@+id/tvTitleAirLineCode"
@@ -77,8 +76,8 @@
         android:layout_marginTop="8dp"
         android:text="@string/airLineCode"
         android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="@+id/tvTitleAirLineName"
-        app:layout_constraintTop_toBottomOf="@+id/tvTitleAirLineName" />
+        app:layout_constraintStart_toStartOf="@+id/iconAirLineName"
+        app:layout_constraintTop_toBottomOf="@+id/iconAirLineName" />
 
     <TextView
         android:id="@+id/tvAirLineCode"
