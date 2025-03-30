@@ -1,8 +1,6 @@
 package jayyo.myflight.ui
 
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,18 +15,6 @@ class ExchangeFragment : Fragment() {
     private val binding get() = _binding!!
     private val exchangeViewModel: ExchangeViewModel by viewModels()
 
-    private val updateHandler = Handler(Looper.getMainLooper())
-    private val updateRunnable = object : Runnable {
-        override fun run() {
-            exchangeViewModel.getConvertedRates(1.0, "USD").observe(viewLifecycleOwner) { rates ->
-                binding.recyclerView.adapter = ExchangeAdapter(rates ?: emptyMap())
-                binding.progressBar.visibility = View.GONE
-            }
-
-            updateHandler.postDelayed(this, 10_000)
-        }
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
@@ -42,12 +28,14 @@ class ExchangeFragment : Fragment() {
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
         binding.progressBar.visibility = View.VISIBLE
 
-        updateHandler.post(updateRunnable)
+        exchangeViewModel.getConvertedRates(1.0, "USD").observe(viewLifecycleOwner) { rates ->
+            binding.recyclerView.adapter = ExchangeAdapter(rates ?: emptyMap())
+            binding.progressBar.visibility = View.GONE
+        }
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
-        updateHandler.removeCallbacks(updateRunnable)
     }
 }

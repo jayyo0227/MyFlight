@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
 import jayyo.myflight.model.ExchangeRepository
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 
 class ExchangeViewModel : ViewModel() {
     private val repository = ExchangeRepository()
@@ -11,8 +12,14 @@ class ExchangeViewModel : ViewModel() {
     private val selectedCurrencies = listOf("USD", "JPY", "EUR", "CNY", "AUD", "KRW")
 
     fun getConvertedRates(amount: Double, baseCurrency: String) = liveData(Dispatchers.IO) {
-        val rates = repository.getLatestRates(API_KEY, baseCurrency)
-        val filteredRates = rates?.filterKeys { it in selectedCurrencies }?.mapValues { it.value * amount } ?: emptyMap()
-        emit(filteredRates)
+        while (true) {
+            val rates = repository.getLatestRates(API_KEY, baseCurrency)
+            val filteredRates =
+                rates?.filterKeys { it in selectedCurrencies }?.mapValues { it.value * amount }
+                    ?: emptyMap()
+            emit(filteredRates)
+
+            delay(10_000)
+        }
     }
 }

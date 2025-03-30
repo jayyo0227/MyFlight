@@ -9,7 +9,7 @@ interface FlightApiService {
 
     @GET("InstantSchedule.ashx")
     suspend fun getFlights(
-        @Query("AirFlyLine") airFlyLine: Int,
-        @Query("AirFlyIO") airFlyIO: Int
+        @Query("AirFlyLine") airFlyLine: Int = 2,
+        @Query("AirFlyIO") airFlyIO: Int = 2
     ): Response<InstantScheduleResponse>
 }
